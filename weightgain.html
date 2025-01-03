@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Gain Program</title>
+    <style>
+        :root {
+            --bg-color: #000;
+            --snd-bg-color: #111;
+            --text-color: #fff;
+            --main-color: #45ffca;
+            --bg-image: url('your-image-url-here.jpg'); /* Set your image URL here */
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('pics/image2.jpg');
+            color: var(--text-color);
+            background-size: cover; /* Ensures the image covers the entire page */
+            background-position: center; /* Centers the background image */
+            background-attachment: fixed; /* Keeps the background fixed during scrolling */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(17, 17, 17, 0.8); /* Dark background for readability */
+            border-radius: 10px;
+        }
+
+        header h1 {
+            color: var(--main-color);
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tab-button {
+            background-color: var(--snd-bg-color);
+            border: 1px solid var(--main-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            border-color: var(--main-color);
+        }
+
+        .tab-button.active {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+        }
+
+        .tab-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid var(--main-color);
+        }
+
+        th {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+        }
+
+        tr:hover {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Weight Gain Program</h1>
+            <p>Focus on building muscle mass and gaining healthy weight!</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'exercise')">Exercises</button>
+            <button class="tab-button" onclick="openTab(event, 'meals')">Meals</button>
+            <button class="tab-button" onclick="openTab(event, 'results')">Results</button>
+        </div>
+
+        <div id="exercise" class="tab-content active">
+            <h2>Exercises for Weight Gain</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Barbell Squats</td>
+                        <td>4</td>
+                        <td>6-8</td>
+                    </tr>
+                    <tr>
+                        <td>Deadlifts</td>
+                        <td>4</td>
+                        <td>5-8</td>
+                    </tr>
+                    <tr>
+                        <td>Overhead Press</td>
+                        <td>4</td>
+                        <td>6-8</td>
+                    </tr>
+                    <tr>
+                        <td>Pull-Ups</td>
+                        <td>4</td>
+                        <td>Max Reps</td>
+                    </tr>
+                    <tr>
+                        <td>Barbell Rows</td>
+                        <td>4</td>
+                        <td>6-8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="meals" class="tab-content">
+            <h2>Meals for Weight Gain</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Meal</th>
+                        <th>Calories</th>
+                        <th>Protein</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Steak & Quinoa</td>
+                        <td>700</td>
+                        <td>50g</td>
+                    </tr>
+                    <tr>
+                        <td>Chicken & Avocado</td>
+                        <td>600</td>
+                        <td>45g</td>
+                    </tr>
+                    <tr>
+                        <td>Oats with Peanut Butter</td>
+                        <td>450</td>
+                        <td>20g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein Shake & Banana</td>
+                        <td>500</td>
+                        <td>35g</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="results" class="tab-content">
+            <h2>Expected Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time Period</th>
+                        <th>Expected Outcome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2-3 Weeks</td>
+                        <td>Increased appetite and energy</td>
+                    </tr>
+                    <tr>
+                        <td>4-6 Weeks</td>
+                        <td>Initial muscle gains and increased body weight</td>
+                    </tr>
+                    <tr>
+                        <td>2-3 Months</td>
+                        <td>Significant muscle mass and weight gain</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabContent, tabButtons;
+            
+            // Hide all tab contents
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+
+            // Remove active class from all buttons
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            // Show the clicked tab content and add active class to the button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
