@@ -36,6 +36,12 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+const user = localStorage.getItem("ironParadiseUser");
+
+if(!user){
+  window.location.href = "signin.html";
+}
+</script>
 </body>
 </html>

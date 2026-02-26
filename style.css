@@ -73,6 +73,7 @@ header span{
     transition: all 0.5s ease ;
     border-bottom: 3px solid transparent;
 }
+
 .navbar a:hover,
 .navbar a.active{
     color: var(--main-color);
@@ -410,6 +411,49 @@ span {
     font-size: 16px;
     color: var(--text-color);
 }
+
+/* ===== BOOK POPUP SAFE STYLES ===== */
+
+#bookPopup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#bookPopup .book-content{
+  background:#111;
+  padding:30px;
+  border-radius:12px;
+  width:350px;
+  text-align:center;
+}
+
+/* VERY IMPORTANT — scoped styling */
+#bookPopup input,
+#bookPopup select{
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  background:#000;
+  color:#fff;
+  border:none;
+}
+
+#bookPopup .close-btn{
+  float:right;
+  cursor:pointer;
+  color:#45ffca;
+  font-size:20px;
+}
+
+
 
 
 

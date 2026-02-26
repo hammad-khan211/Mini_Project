@@ -140,6 +140,11 @@
     </div>
 
     <script>
+        const user = localStorage.getItem("ironParadiseUser");
+
+if(!user){
+  window.location.href = "signin.html";
+}
         function calculateBMI() {
             const weight = parseFloat(document.getElementById('weight').value);
             const height = parseFloat(document.getElementById('height').value);

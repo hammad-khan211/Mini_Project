@@ -208,6 +208,11 @@
     </div>
 
     <script>
+        const user = localStorage.getItem("ironParadiseUser");
+
+if(!user){
+  window.location.href = "signin.html";
+}
         function openTab(evt, tabName) {
             let i, tabContent, tabButtons;
             

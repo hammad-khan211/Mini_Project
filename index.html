@@ -21,12 +21,14 @@
             <li><a href="#plans">Pricing</a></li>
             <li><a href="#review ">Review</a></li>
             <li><a href="bmi.html" target="_blank">BMI Calculator</a></li>
+           
 
           </ul>
 
           <div class="top-btn">
-            <a href="registartion.html" target="_blank" class="nav-btn ">Join Us</a>
-          </div>
+  <a id="registerLink" href="registartion.html" target="_blank" class="nav-btn">Join Us</a>
+  <a id="logoutLink" href="javascript:void(0)" onclick="logout()" class="nav-btn">Logout</a>
+</div>
     </header>
 
     <section class="home" id="home">
@@ -35,7 +37,7 @@
             <h1>Dream Physique</h1>
             <h3><span class="multiple-text">Bodybuilding</span></h3>
             <p>Unleash Your Inner Power – Transform Your Body, Elevate Your Mind, and Achieve Your Fitness Goals! </p>
-            <a href="registartion.html" target="_blank" class="nav-btn">Join Us</a>
+            <a id="heroRegisterLink" href="registartion.html" target="_blank" class="nav-btn">Join Us</a>
             
         </div>
 
@@ -49,32 +51,32 @@
         <h2 class="heading" data-aos="zoom-in-down">Our <span>Services</span></h2>
         <div class="services-content" data-aos="zoom-in-up">
             <div class="row">
-               <a href="fitness.html" target="_blank"> <img src="pics/image1.jpg" alt=""></a>
+               <a href="fitness.html"> <img src="pics/image1.jpg" alt=""></a>
                 <h4>Physical Fitness</h4>
             </div>
 
             <div class="row">
-               <a href="weightgain.html" target="_blank"> <img src="pics/image2.jpg" alt=""></a>
+               <a href="weightgain.html"> <img src="pics/image2.jpg" alt=""></a>
                 <h4>Weight Gain</h4>
             </div>
 
             <div class="row">
-                <a href="strengthtraining.html" target="_blank"><img src="pics/image3.jpg" alt=""></a>
+                <a href="strengthtraining.html"><img src="pics/image3.jpg" alt=""></a>
                 <h4>Strength Training</h4>
             </div>
 
             <div class="row">
-               <a href="fatloss.html" target="_blank"> <img src="pics/image4.jpg" alt=""></a>
+               <a href="fatloss.html" > <img src="pics/image4.jpg" alt=""></a>
                 <h4>Fat Loss</h4>
             </div>
 
             <div class="row">
-                <a href="weightlifting.html" target="_blank"><img src="pics/image5.jpg" alt=""></a>
+                <a href="weightlifting.html" ><img src="pics/image5.jpg" alt=""></a>
                 <h4>Weight Lifting</h4>
             </div>
 
             <div class="row">
-                <a href="running.html" target="_blank"><img src="pics/about.jpg" alt=""></a>
+                <a href="running.html" ><img src="pics/about.jpg" alt=""></a>
                 <h4>Running</h4>
             </div>
         </div>
@@ -94,7 +96,9 @@
             <p>- Enjoy access to top-notch equipment, spacious workout areas, and a motivating environment designed to push you toward success.</p>
             <p>- Be part of a fitness family that inspires, encourages, and celebrates your achievements—no matter where you are in your journey.</p>
 
-            <a href="registartion.html" target="_blank" class="btn">Book a Free Class</a>
+            <a href="javascript:void(0)" onclick="bookFreeClass()" class="btn">
+  Book a Free Class
+</a>
         </div>
     </section>
 
@@ -110,7 +114,7 @@
                     <li>Smart Workout Plan</li>
                     <li>At Home Workout</li>
                 </ul>
-                <a href="basic.html" target="_blank">
+                <a href="basic.html">
                     Join Now
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -124,7 +128,7 @@
                     <li>Smart Workout Plan</li>
                     <li>At Home Workout</li>
                 </ul>
-                <a href="pro.html" target="_blank">
+                <a href="pro.html">
                     Join Now
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -140,7 +144,7 @@
                     <li>At Home Workout</li>
                     <li>Personal Training</li>
                 </ul>
-                <a href="premium.html" target="_blank">
+                <a href="premium.html" >
                     Join Now
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -202,6 +206,43 @@
         </div>
     </section>
 
+    <!-- 🔥 BOOK CLASS POPUP -->
+<div id="bookPopup" class="book-popup">
+  <div class="book-content">
+
+    <span class="close-btn" onclick="closePopup()">✖</span>
+
+    <h2>Book Your Free Class 💪</h2>
+
+    <form id="popupBookForm">
+
+      <input id="popupName" disabled>
+      <input id="popupEmail" disabled>
+      <input id="popupGender" disabled>
+
+      <input id="popupMobile" placeholder="Mobile Number" required>
+
+      <select id="popupExercise" required>
+        <option value="">Select Exercise</option>
+        <option>Strength Training</option>
+        <option>Fat Loss</option>
+        <option>Weight Gain</option>
+        <option>Running</option>
+      </select>
+
+      <input type="date" id="popupDate" required>
+      <input type="time" id="popupTime" required>
+
+      <button type="submit" class="btn">Book Now</button>
+
+    </form>
+
+    <p id="popupMsg"></p>
+
+  </div>
+</div>
+    
+
     <footer class="footer" >
         
         <div class="social">
@@ -217,14 +258,22 @@
        <center> <a href="https://ahmad-hammad-khan-portfolio.netlify.app/" target="_blank"><span style="font-size: 3rem;font-family:'Times New Roman', Times, serif;">Designed by AHMAD HAMMAD KHAN</span></a></center>
         
     </footer>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({
-        offset:300,
-        duration:1400,
-      });
-    </script>
+const user = localStorage.getItem("ironParadiseUser");
+
+if(!user){
+  window.location.href = "signin.html";
+}
+</script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+AOS.init({
+  offset:300,
+  duration:1400,
+});
+</script>
     <script src="script.js"></script>
 
  </body>
